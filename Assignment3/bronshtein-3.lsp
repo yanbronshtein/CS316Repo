@@ -8,7 +8,6 @@
 			(/ (+ a b) 2)
 			nil))
 
-    (print (safe-avg 2.0 3))
        
 
 ; Problem 3:
