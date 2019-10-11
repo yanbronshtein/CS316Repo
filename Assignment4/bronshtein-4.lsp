@@ -16,22 +16,8 @@
 ;  __________________________________ ))
 
 
+
+
 (defun my-sum (L)
-	(let ((x (sum (cdr L))))
-		(+ x 1)))
-; (print (my-sum '(1 2 3 4)))
-
-
-; (defun my-sum (L)
-;    (let ((x (sum (cdr L))))
-;         (+ x (car L))))
-
-; (defun compile-arc (arc) 
-; 	(let ((a (arc-action arc)))
-;         ‘((equal this-input ’,(arc-label arc))
-;           (format t "~&~A" ,a)
-;           (,(node-name (arc-to arc))
-;            (rest input-syms)))))
-
-
-
+   (let ((x (sum (cdr L))))
+      (+ x (car L))))
