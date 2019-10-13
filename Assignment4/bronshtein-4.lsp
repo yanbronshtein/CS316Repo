@@ -59,9 +59,10 @@
 ; 	
 
 (defun my-inc-list-2 (l n)
-	(let ((x (inc-list-2 (cdr l n)))
-		(cond ((endp l) nil)
-          (t (cons (+ (car l) n) x))))))
+	(let ((x (neg-nums (cdr l))))
+		(cond ((null l) 
+					nil)
+          (t (cons (car l) x)))))
 
 
 
