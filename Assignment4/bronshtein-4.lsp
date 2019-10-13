@@ -62,7 +62,7 @@
 	(let ((x (neg-nums (cdr l))))
 		(cond ((null l) 
 					nil)
-          (t (cons (car l) x)))))
+          (t (cons (+ (car l) n) x)))))
 
 
 
