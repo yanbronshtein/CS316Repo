@@ -58,12 +58,18 @@
 ;  __________________________________ ))	
 ; 	
 
-(defun my-inc-list-2 (l n)
-	(let ((x (inc-list-2 (cdr l))))
-		(cond ((null l) 
-					(cons (car l) x))
-          (t x))))
+; (defun my-inc-list-2 (l n)
+; 	(let ((x (inc-list-2 (cdr l))))
+; 		(cond ((null l) 
+; 					(cons (car l) x))
+;           (t x))))
 
+
+(defun my-inc-list-2 (l n)
+	(let ((x (inc-list-2 (cdr l)))
+		(cond ((null l) 
+					nil)
+          (t (cons (+ (car l) n) x))))))
 
 
 
