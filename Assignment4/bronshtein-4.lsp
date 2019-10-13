@@ -38,7 +38,7 @@
 
 (defun my-neg-nums (L)
 	(let ((x (neg-nums (cdr L)))))
-		(cond ((minusp (car L)) (cons (car L) X))
+		(cond ((minusp (car L)) (cons (car L) x))
                 (t x)))
 					 
 	
