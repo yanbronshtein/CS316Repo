@@ -44,10 +44,7 @@
 	
 			
 		
-(let ((zebra "stripes")
-           (tiger "fierce"))
-       (message "One kind of animal has %s and another is %s."
-                zebra tiger))
+
 
 
 (print "Created my first bash script")
