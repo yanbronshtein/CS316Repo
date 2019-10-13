@@ -38,8 +38,7 @@
 
 (defun my-neg-nums (L)
 	(let ((x (neg-nums (cdr L))))
-		(cond ((null x) NIL)
-					(t (not (null x)) x))))
+		(if ((null x) NIL x))))
 
 (print "Created my first bash script")
 (print "Hello from the other side")
