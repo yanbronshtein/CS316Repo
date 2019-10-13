@@ -40,4 +40,6 @@
 	(let ((x (neg-nums (cdr L))))
 		(cond ((null x) NIL)
 					(t (not (null x)) x))))
+
+(print "Created my first bash script")
 	
