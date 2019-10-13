@@ -36,11 +36,18 @@
 ;  ____________ ))
 ;  There are two cases: (car L) may or may not be negative.
 
-(defun my-neg-nums (L)
-	(let ((x (neg-nums (cdr L)))))
-		(cond ((minusp (car L)) (cons (car L) x))
-                (t x)))
-					 
+; (defun my-neg-nums (L)
+; 	(let ((x (neg-nums (cdr L)))))
+; 		(cond ((minusp (car L)) (cons (car L) x))
+;                 (t x)))
+
+(defun neg-nums (L)
+   (if (endp L)
+       nil
+       (let ((X (neg-nums (cdr L))))
+          (cond ((minusp (car L)) (cons (car L) X))
+                (t x)))))
+			
 	
 			
 		
