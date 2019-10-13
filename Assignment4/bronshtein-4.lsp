@@ -42,19 +42,7 @@
 					(cons (car L) x))
           (t x))))
 
-; (defun neg-nums (L)
-;    (if (endp L)
-;        nil
-;        (let ((X (neg-nums (cdr L))))
-;           (cond ((minusp (car L)) (cons (car L) X))
-;                 (t x)))))
 			
 	
 			
-		
-
-
-
-(print "Created my first bash script")
-(print "Hello from the other side")
 	
