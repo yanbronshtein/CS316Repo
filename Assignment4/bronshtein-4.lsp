@@ -36,15 +36,19 @@
 ;  ____________ ))
 ;  There are two cases: (car L) may or may not be negative.
 
- (defun my-neg-nums (L)
- 	(let ((x (neg-nums (cdr L)))))
-		(if ((minusp (car L) 
-			(cons (car L) x) x))))
+(defun my-neg-nums (L)
+	(let ((x (neg-nums (cdr L)))))
+		(if ((minusp (car L)) 
+				(cons (car L) x) 
+				x)))
 					 
 	
 			
 		
-
+(let ((zebra "stripes")
+           (tiger "fierce"))
+       (message "One kind of animal has %s and another is %s."
+                zebra tiger))
 
 
 (print "Created my first bash script")
