@@ -21,3 +21,23 @@
 (defun my-sum (L)
    (let ((x (sum (cdr L))))
       (+ x (car L))))
+
+
+
+; B. NEG-NUMS is a function that is already defined on venus and euclid; if L is any list of real
+;  numbers then (NEG-NUMS L) returns a new list that consists of the negative elements of L. For
+;  example: (NEG-NUMS '(–1 0 –8 2 0 8 –1 –8 2 8 4 –3 0) ) => (–1 –8 –1 –8 –3).
+;  Complete the following definition of a function MY-NEG-NUMS without making further calls
+;  of NEG-NUMS and without calling MY-NEG-NUMS recursively, in such a way that if L is
+;  any nonempty list of numbers then (MY-NEG-NUMS L) is equal to (NEG-NUMS L).
+;  (defun my-neg-nums (L)
+;  (let ((X (neg-nums (cdr L))))
+;  ______________________________________
+;  ____________ ))
+;  There are two cases: (car L) may or may not be negative.
+
+(defun my-neg-nums (L)
+	(let ((x (neg-nums (cdr L))))
+		(cond ((null x) NIL)
+					(t (not (null x))))))
+	
