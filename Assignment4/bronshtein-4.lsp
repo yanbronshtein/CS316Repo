@@ -42,4 +42,5 @@
 					(t (not (null x)) x))))
 
 (print "Created my first bash script")
+(print "Hello from the other side")
 	
