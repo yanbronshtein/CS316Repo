@@ -60,6 +60,7 @@
 
 (defun my-inc-list-2 (l n)
 	(let ((x (neg-nums (cdr l)))
+		(print "x is:")
 		(print x)
 		(cond ((null l) 
 					nil)
