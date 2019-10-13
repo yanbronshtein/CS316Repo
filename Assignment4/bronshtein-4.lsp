@@ -36,9 +36,13 @@
 ;  ____________ ))
 ;  There are two cases: (car L) may or may not be negative.
 
-(defun my-neg-nums (L)
-	(let ((x (neg-nums (cdr L))))
-		(if ((null x) NIL x))))
+ (defun my-neg-nums (L)
+ 	(let ((x (neg-nums (cdr L)))))
+		(if (null x)
+			nil
+			x))
+
+
 
 (print "Created my first bash script")
 (print "Hello from the other side")
