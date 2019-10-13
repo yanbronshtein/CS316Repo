@@ -60,7 +60,7 @@
 
 (defun my-inc-list-2 (l n)
 	(let ((x (inc-list-2 (cdr l n)))
-		(cond ((null x) 
+		(cond ((null l) 
 					x)
           (t (cons (+ (car l) n) x))))))
 
