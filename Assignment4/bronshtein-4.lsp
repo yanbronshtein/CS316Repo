@@ -39,5 +39,5 @@
 (defun my-neg-nums (L)
 	(let ((x (neg-nums (cdr L))))
 		(cond ((null x) NIL)
-					(t (not (null x) x)))))
+					(t (not (null x)) x))))
 	
