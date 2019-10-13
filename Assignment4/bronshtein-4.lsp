@@ -38,9 +38,12 @@
 
  (defun my-neg-nums (L)
  	(let ((x (neg-nums (cdr L)))))
-		(if (null x)
-			nil
-			x))
+		(if ((minusp (car L) 
+			(cons (car L) x) x))))
+					 
+	
+			
+		
 
 
 
