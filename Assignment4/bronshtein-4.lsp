@@ -65,11 +65,7 @@
           (t x))))
 
 
-(defun inc-list-2 (L N)
-   (if (endp L)
-      nil
-      (let ((X (inc-list-2 (cdr L) N)))
-         (cons (+ (car L) N) X))))
+
 
 
 
