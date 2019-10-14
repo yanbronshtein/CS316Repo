@@ -124,9 +124,10 @@
 
 (defun my-split-list (l)
 	(let ((x (split-list (cdr l))))
-		(print (car x))
+		(print (car x)) ;(2 4)
 		(print (cdr l)) ;(2 3 4 5)
-		
+		(print (cadr l))
+
 		(list (cons (car l) (cadr x)) (car x))))
 		
 
