@@ -48,16 +48,16 @@
 ; Hint: You should not have to call any function other than INSERT and CAR.
 
 
-; (defun isort (l)
-; 	(if (null l)
-; 			nil
-; 			(let ((x (isort (cdr l))))
-; 				(insert (car l) x))))
-	(defun isort (L)
-   (if (endp L)
-      nil
-      (let ((X (isort (cdr L))))
-         (insert (car L) X))))
+(defun isort (l)
+	(if (null l)
+			nil
+			(let ((x (isort (cdr l))))
+				(insert (car l) x))))
+	; (defun isort (L)
+ ;   (if (endp L)
+ ;      nil
+ ;      (let ((X (isort (cdr L))))
+ ;         (insert (car L) X))))
 							
        
 
