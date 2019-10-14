@@ -162,18 +162,26 @@
 ;     (cond ((<= (car l) n) (cons (car l) x))))) ;Append
 
 
-(defun my-partition (l p)
-  (let ((x (partition (cdr l) p)))
-    (print cdr l)
-    (print car l)
-    (print car x)
-    (print cadr x)
+; (defun my-partition (l p)
+;   (let ((x (partition (cdr l) p)))
+;     (print cdr l)
+;     (print car l)
+;     (print car x)
+;     (print cadr x)
 
-    (cond ((< (car l) p) 
-    			(list (cons (car l) (car x)) (cadr x)))
-       		(t (list (car x) (cons (car l) (cadr x)))))))
+;     (cond ((< (car l) p) 
+;     			(list (cons (car l) (car x)) (cadr x)))
+;        		(t (list (car x) (cons (car l) (cadr x)))))))
 
 
+
+
+(defun partition (L P)
+   (if (endp L)
+      (list ()())
+      (let ((X (partition (cdr L) P)))
+         (cond ((< (car L) P) (list (cons (car L) (car X)) (cadr X)))
+               (t (list (car x) (cons (car L) (cadr X))))))))
 
 		
 
