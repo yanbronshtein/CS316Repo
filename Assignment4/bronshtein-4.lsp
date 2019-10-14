@@ -90,12 +90,12 @@
 ; 		)
 
 
-(defun insert (n l)
-   (if (endp l)
-       (list n)
-       (let ((x (insert n (cdr l))))
-          (cond ((> (car l) n) (cons n l))
-		(t (cons (car l) x))))))
+; (defun insert (n l)
+;    (if (endp l)
+;        (list n)
+;        (let ((x (insert n (cdr l))))
+;           (cond ((> (car l) n) (cons n l))
+; 		(t (cons (car l) x))))))
 
 
 
@@ -105,7 +105,7 @@
 ; 	(cond ((<= (car l) n) (cons (car l) n l)) ;Prepend new element to the list
 
 
-(defun insert (n l)
+(defun my-insert (n l)
 	(cond ((> (car l) n) (cons n l))) ; Prepend new element if it is less than first elem in list 
 	(let ((x (insert n (cdr l))))
     (cond ((<= (car l) n) (cons (car l) x))))) 
