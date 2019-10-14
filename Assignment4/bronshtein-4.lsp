@@ -162,7 +162,7 @@
 ;     (cond ((<= (car l) n) (cons (car l) x))))) ;Append
 
 
-(defun partition (l p)
+(defun my-partition (l p)
   (let ((x (partition (cdr l) p)))
     (print cdr l)
     (print car l)
