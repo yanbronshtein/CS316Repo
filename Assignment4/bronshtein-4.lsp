@@ -123,16 +123,16 @@
 
 
 (defun my-split-list (l)
-	(let ((x (split-list (cdr l)))))
-		(list (cons (car l) (cadr x)) (car x)))
+	(let ((x (split-list (cdr l))))
+		(list (cons (car l) (cadr x)) (car x))))
 
 
 
-; (defun split-list (L)
-;    (if (endp L)
-;       (list ()())
-;       (let ((X (split-list (cdr L))))
-;          (list (cons (car L) (car (cdr X))) (car X)))))
+(defun split-list (L)
+   (if (endp L)
+      (list ()())
+      (let ((X (split-list (cdr L))))
+         (list (cons (car L) (car (cdr X))) (car X)))))
 
 
 
