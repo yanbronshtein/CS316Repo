@@ -11,6 +11,6 @@
 ;  __________________________________ ))
 (defun sum (l)
 	(if (null l)
-			nil
+			0
 			(let ((x (sum (cdr l))))
 				(+ x (car l)))))
