@@ -43,9 +43,9 @@
 
 (defun isort (l)
 	(if (null l)
-			nil)
+			nil
 			(let ((x (isort (cdr l))))
-				(insert (car l) x)))
+				(insert (car l) x))))
 	
 							
        
