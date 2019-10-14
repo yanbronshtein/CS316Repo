@@ -32,5 +32,5 @@
 	(if (null l)
 			nil
 			(let ((x (inc-list-2 (cdr l) n)))
-				(cons (+ (car l) x) x))))
+				(cons (+ (car l) n) x))))
 
