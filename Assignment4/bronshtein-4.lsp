@@ -39,14 +39,24 @@
 ;  __________________________________ ))
 ;  [There are two cases: N may or may not be ≤ (car L). In the former case you do not need to use X,
 ;  so if you move that case outside the LET the function will be more efficient.]
+; (defun insert (n l)
+; 	(if (null l)
+; 			nil
+; 			(let ((x (insert n (cdr l))))
+; 				(cond ((> n (car l))
+; 								(cons (car l) x))))
+; 			(cond ((<= n (car l))
+; 							(cons n (car l))))))
+
 (defun insert (n l)
 	(if (null l)
 			nil
-			(let ((x (insert n (cdr l))))
-				(cond ((> n (car l))
-								(cons (car l) x))))
 			(cond ((<= n (car l))
-							(cons n (car l))))))
+							(cons n (car l)))
+						(t (let ((x (insert n (cdr l))))
+									(cons (car l) x))))))
+			
+
 
 
 
