@@ -32,6 +32,21 @@
        		(list n l)
        		(let ((x (insert n (cdr l))))
           	(cons (car l) x)))))
+
+;Solution to Problem 5
+; E. ISORT is a function that is already defined on venus and euclid; if L is any list of real numbers then (ISORT L) is a list consisting of the elements of L in ascending order. Complete the following definition of a function MY-ISORT without making further calls of ISORT and without calling MY-ISORT recursively, in such a way that if L is any nonempty list of real numbers then (MY-ISORT L) is equal to (ISORT L).
+;        (defun my-isort (L)
+;           (let ((X (isort (cdr L))))
+;              __________________________________ ))
+; Hint: You should not have to call any function other than INSERT and CAR.
+
+
+(defun isort (l)
+	(if (null l)
+			nil)
+			(let ((x (isort (cdr l))))
+				(insert (car l) x)))
+	
 							
        
 
