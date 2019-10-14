@@ -83,26 +83,7 @@
 ;  [There are two cases: N may or may not be ≤ (car L). In the former case you do not need to use X,
 ;  so if you move that case outside the LET the function will be more efficient.]
 
-; (defun my-insert (n l)
-; 	(let ((x (insert n (cdr l)))))
-; 		(cond (() 
-; 			))
-; 		)
 
-
-; (defun insert (n l)
-;    (if (endp l)
-;        (list n)
-;        (let ((x (insert n (cdr l))))
-;           (cond ((> (car l) n) (cons n l))
-; 		(t (cons (car l) x))))))
-
-
-
-; (defun insert (n l)
-; 	(let ((x (insert n (cdr l))))
-;        (cond ((> (car l) n) (cons n l)))) ;Prepend new element to the list
-; 	(cond ((<= (car l) n) (cons (car l) n l)) ;Prepend new element to the list
 
 
 (defun my-insert (n l)
