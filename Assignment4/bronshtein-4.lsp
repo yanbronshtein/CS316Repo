@@ -57,7 +57,7 @@
 ;  __________________________________ ))
 (defun split-list (l)
 	(if (null l)
-			(nil nil)
+			(()())
 			(let ((x (split-list (cdr l))))
 				(list (cons (car l) (cadr x)) (car x)))))
 
