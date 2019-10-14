@@ -152,9 +152,26 @@
 
 ; (defun my-partition (l p)
 ; 	(let ((x (partition (cdr l) p))))
-		
+
 ; 	)
 
+
+; (defun my-partition (l p)
+; 	(cond ((> (car l) n) (cons n l))) ; Prepend new element if it is less than first elem in list 
+; 	(let ((x (insert n (cdr l))))
+;     (cond ((<= (car l) n) (cons (car l) x))))) ;Append
+
+
+(defun partition (l p)
+  (let ((x (partition (cdr l) p)))
+    (print cdr l)
+    (print car l)
+    (print car x)
+    (print cadr x)
+
+    (cond ((< (car l) p) 
+    			(list (cons (car l) (car x)) (cadr x)))
+       		(t (list (car x) (cons (car l) (cadr x)))))))
 
 
 
