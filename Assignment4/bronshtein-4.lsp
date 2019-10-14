@@ -103,13 +103,13 @@
 ;  Hint: You should not have to call any function other than INSERT and CAR.
 
 
-(defun my-isort (l)
-	(let ((x (isort (cdr l)))))
+; (defun my-isort (l)
+; 	(let ((x (isort (cdr l)))))
 			
-	)
+; 	)
 
 
-(defun my-sort (l)
+(defun my-isort (l)
   (let ((x (isort (cdr l))))
     (insert (car l) x)))
 
