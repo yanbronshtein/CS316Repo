@@ -108,7 +108,7 @@
 (defun insert (n l)
 	(cond ((> (car l) n) (cons n l))) ; Prepend new element if it is less than first elem in list 
 	(let ((x (insert n (cdr l))))
-    (cond ((<= (car l) n) (cons (car l) x))))) 
+    (cond ((<= (car l) n) (cons (car l) x)))))` 
 
 
 
