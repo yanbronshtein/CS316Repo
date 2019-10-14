@@ -126,7 +126,8 @@
 	(let ((x (split-list (cdr l))))
 		(print (car x)) ;(2 4)
 		(print (cdr l)) ;(2 3 4 5)
-		(print (cadr l))
+		(print (cadr l)) ;(2)
+		(print (car l)) 
 
 		(list (cons (car l) (cadr x)) (car x))))
 		
