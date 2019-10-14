@@ -1,16 +1,30 @@
 ; Solution to Problem 1
-
-
-; A. SUM is a function that is already defined on venus and euclid; if L is any list of numbers then
-;  (SUM L) returns the sum of the elements of L. [Thus (SUM ( )) returns 0.] Complete the
-;  following definition of a function MY-SUM without making further calls of SUM and without
-;  calling MY-SUM recursively, in such a way that if L is any nonempty list of numbers then
-;  (MY-SUM L) is equal to (SUM L).
-;  (defun my-sum (L)
-;  (let ((X (sum (cdr L))))
-;  __________________________________ ))
 (defun sum (l)
 	(if (null l)
 			0
 			(let ((x (sum (cdr l))))
 				(+ x (car l)))))
+
+;Solution to Problem 2
+
+; B. NEG-NUMS is a function that is already defined on venus and euclid; if L is any list of real
+;  numbers then (NEG-NUMS L) returns a new list that consists of the negative elements of L. For
+;  example: (NEG-NUMS '(–1 0 –8 2 0 8 –1 –8 2 8 4 –3 0) ) => (–1 –8 –1 –8 –3).
+;  Complete the following definition of a function MY-NEG-NUMS without making further calls
+;  of NEG-NUMS and without calling MY-NEG-NUMS recursively, in such a way that if L is
+;  any nonempty list of numbers then (MY-NEG-NUMS L) is equal to (NEG-NUMS L).
+;  (defun my-neg-nums (L)
+;  (let ((X (neg-nums (cdr L))))
+;  ______________________________________
+;  ____________ ))
+;  There are two cases: (car L) may or may not be negative.
+
+
+(defun neg-nums (l)
+	(if (null l)
+		nil
+		(let ((x (neg-nums (cdr l))))
+			; car l is negative
+			(cond ((minusp ))
+							(cons (car l) x))
+						(t x))))
