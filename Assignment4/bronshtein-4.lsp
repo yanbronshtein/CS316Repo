@@ -6,20 +6,6 @@
 				(+ x (car l)))))
 
 ;Solution to Problem 2
-
-; B. NEG-NUMS is a function that is already defined on venus and euclid; if L is any list of real
-;  numbers then (NEG-NUMS L) returns a new list that consists of the negative elements of L. For
-;  example: (NEG-NUMS '(–1 0 –8 2 0 8 –1 –8 2 8 4 –3 0) ) => (–1 –8 –1 –8 –3).
-;  Complete the following definition of a function MY-NEG-NUMS without making further calls
-;  of NEG-NUMS and without calling MY-NEG-NUMS recursively, in such a way that if L is
-;  any nonempty list of numbers then (MY-NEG-NUMS L) is equal to (NEG-NUMS L).
-;  (defun my-neg-nums (L)
-;  (let ((X (neg-nums (cdr L))))
-;  ______________________________________
-;  ____________ ))
-;  There are two cases: (car L) may or may not be negative.
-
-
 (defun neg-nums (l)
 	(if (null l)
 		nil
@@ -28,3 +14,23 @@
 			(cond ((minusp (car l))
 							(cons (car l) x))
 						(t x)))))
+
+;Solution to Problem 3
+; C. INC-LIST-2 is a function that is already defined on venus and euclid; if L is any list of numbers and
+;  N is a number then (INC-LIST-2 L N) returns a list of the same length as L in which each element
+;  is equal to (N + the corresponding element of L). For example,
+;  (INC-LIST-2 ( ) 5) => NIL (INC-LIST-2 '(3 2.1 1 7.9) 5) => (8 7.1 6 12.9)
+;  Complete the following definition of a function MY-INC-LIST-2 without making further calls
+;  of INC-LIST-2 and without calling MY-INC-LIST-2 recursively, in such a way that if L is
+;  any nonempty list of numbers and N is any number then (MY-INC-LIST-2 L N) is equal to
+;  (INC-LIST-2 L N). 
+; (defun my-inc-list-2 (L N)
+;  (let ((X (inc-list-2 (cdr L) N)))
+;  __________________________________ ))
+
+(defun inc-list-2 (l n)
+	(if (null l)
+			nil
+			(let ((x (inc-list-2 (cdr l) n)))
+				(cons (+ (car l) x) x))))
+
