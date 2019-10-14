@@ -52,7 +52,7 @@
 	(if (null l)
 			nil
 			(cond ((<= n (car l))
-							(cons 'n (car l)))
+							(list n (car l)))
 						(t (let ((x (insert n (cdr l))))
 									(cons (car l) x))))))
 			
