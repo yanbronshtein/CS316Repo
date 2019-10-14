@@ -154,6 +154,9 @@
 
 (defun my-partition (l p)
 	(let ((x (partition (cdr l) p)))
+		
+		(print "x")
+		(print x)
 		(print "cdr l")
 		(print (cdr l))
 		
