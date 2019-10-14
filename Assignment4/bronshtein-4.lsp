@@ -67,9 +67,9 @@
 	(if (null l)
       (list n)
       (if (<= (car l) n) 
-       		(cons (car l) x)
+       		(list n l)
        		(let ((x (insert n (cdr l))))
-          	(cons n l)))))
+          	(cons (car l) x)))))
 							
        
 
