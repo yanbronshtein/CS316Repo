@@ -5,7 +5,7 @@
 			(let ((x (sum (cdr l))))
 				(+ x (car l)))))
 
-;Solution to Problem 2
+; Solution to Problem 2
 (defun neg-nums (l)
 	(if (null l)
 		nil
@@ -16,7 +16,7 @@
 			; car l is positive
 						(t x)))))
 
-;Solution to Problem 3
+; Solution to Problem 3
 (defun inc-list-2 (l n)
 	(if (null l)
 			nil
@@ -24,7 +24,7 @@
 				(cons (+ (car l) n) x))))
 
 
-;Solution to Problem 4
+; Solution to Problem 4
 (defun insert (n l)
 	(if (null l)
       (list n)
@@ -33,35 +33,36 @@
        		(let ((x (insert n (cdr l))))
           	(cons (car l) x)))))
 
-; (defun insert (N L)
-;    (if (endp L)
-;        (list N)
-;        (let ((X (insert N (cdr L))))
-;           (cond ((> (car L) N) (cons N L))
-; 		(t (cons (car L) X))))))
-
-;Solution to Problem 5
-; E. ISORT is a function that is already defined on venus and euclid; if L is any list of real numbers then (ISORT L) is a list consisting of the elements of L in ascending order. Complete the following definition of a function MY-ISORT without making further calls of ISORT and without calling MY-ISORT recursively, in such a way that if L is any nonempty list of real numbers then (MY-ISORT L) is equal to (ISORT L).
-;        (defun my-isort (L)
-;           (let ((X (isort (cdr L))))
-;              __________________________________ ))
-; Hint: You should not have to call any function other than INSERT and CAR.
 
 
+; Solution to Problem 5
 (defun isort (l)
 	(if (null l)
 			nil
 			(let ((x (isort (cdr l))))
 				(insert (car l) x))))
-	; (defun isort (L)
- ;   (if (endp L)
- ;      nil
- ;      (let ((X (isort (cdr L))))
- ;         (insert (car L) X))))
-							
-       
 
-			
+; Solution to Problem 6
+
+; F. SPLIT-LIST is a function that is already defined on venus and euclid; if L is any list then
+;  (SPLIT-LIST L) returns a list of two lists, in which the first list consists of the 1st, 3rd, 5th, ...
+;  elements of L, and the second list consists of the 2nd, 4th, 6th, ... elements of L. Examples:
+;  (SPLIT-LIST ( )) => (NIL NIL) (SPLIT-LIST '(A B C D 1 2 3 4 5)) => ((A C 1 3 5) (B D 2 4))
+;  (SPLIT-LIST '(B C D 1 2 3 4 5)) => ((B D 2 4) (C 1 3 5)) (SPLIT-LIST '(A)) => ((A) NIL)
+;  Complete the following definition of a function MY-SPLIT-LIST without making further calls of
+;  SPLIT-LIST and without calling MY-SPLIT-LIST recursively, in such a way that if L is any
+;  nonempty list then (MY-SPLIT-LIST L) is equal to (SPLIT-LIST L).
+;  (defun my-split-list (L)
+;  (let ((X (split-list (cdr L))))
+;  __________________________________ ))
+(defun split-list (l)
+	(if (null l)
+			(nil nil)
+			(let ((x (split-list (cdr l))))
+				(list (cons (car l) (cadr x)) (car x)))))
+
+
+	; 
 
 
 
