@@ -128,11 +128,11 @@
 
 
 
-(defun split-list (L)
-   (if (endp L)
-      (list ()())
-      (let ((X (split-list (cdr L))))
-         (list (cons (car L) (car (cdr X))) (car X)))))
+; (defun split-list (L)
+;    (if (endp L)
+;       (list ()())
+;       (let ((X (split-list (cdr L))))
+;          (list (cons (car L) (car (cdr X))) (car X)))))
 
 
 
