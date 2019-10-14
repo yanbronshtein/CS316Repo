@@ -56,12 +56,22 @@
 			
 
 
+; (defun insert (n l)
+;    (if (null l)
+;        (list n)
+;        (let ((x (insert n (cdr l))))
+;           (cond ((> (car l) n) (cons n l))
+; 								(t (cons (car l) x))))))
+
 (defun insert (n l)
-   (if (null l)
-       (list n)
-       (let ((x (insert n (cdr l))))
-          (cond ((> (car l) n) (cons n l))
-								(t (cons (car l) x))))))
+	(if (null l)
+      (list n)
+      (if (<= (car l) n) 
+       		(cons (car l) x)
+       		(let ((x (insert n (cdr l))))
+          	(cons n l)))))
+							
+       
 
 			
 
