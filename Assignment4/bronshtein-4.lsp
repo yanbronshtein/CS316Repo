@@ -89,8 +89,29 @@
 (defun my-insert (n l)
 	(cond ((> (car l) n) (cons n l))) ; Prepend new element if it is less than first elem in list 
 	(let ((x (insert n (cdr l))))
-    (cond ((<= (car l) n) (cons (car l) x))))) 
+    (cond ((<= (car l) n) (cons (car l) x))))) ;Append
 
+
+; E. ISORT is a function that is already defined on venus and euclid; if L is any list of real numbers
+;  then (ISORT L) is a list consisting of the elements of L in ascending order. Complete the
+;  following definition of a function MY-ISORT without making further calls of ISORT and
+;  without calling MY-ISORT recursively, in such a way that if L is any nonempty list of real
+;  numbers then (MY-ISORT L) is equal to (ISORT L).
+;  (defun my-isort (L)
+;  (let ((X (isort (cdr L))))
+;  __________________________________ ))
+;  Hint: You should not have to call any function other than INSERT and CAR.
+
+
+(defun my-isort (l)
+	(let ((x (isort (cdr l)))))
+			
+	)
+
+
+(defun my-sort (l)
+  (let ((x (isort (cdr l))))
+    (insert (car l) x)))
 
 
 
