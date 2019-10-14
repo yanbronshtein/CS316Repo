@@ -174,14 +174,17 @@
 ;        		(t (list (car x) (cons (car l) (cadr x)))))))
 
 
+(defun my-partition (l p)
+	(let ((X (partition (cdr l) p)))
+		(cond ((< (car l) p) (list (cons (car l) (car x)) (cadr x)))
+					(t (list (car x) (cons (car l) (cadr x)))))))
 
-
-(defun partition (L P)
-   (if (endp L)
-      (list ()())
-      (let ((X (partition (cdr L) P)))
-         (cond ((< (car L) P) (list (cons (car L) (car X)) (cadr X)))
-               (t (list (car x) (cons (car L) (cadr X))))))))
+; (defun partition (L P)
+;    (if (endp L)
+;       (list ()())
+;       (let ((X (partition (cdr L) P)))
+;          (cond ((< (car L) P) (list (cons (car L) (car X)) (cadr X)))
+;                (t (list (car x) (cons (car L) (cadr X))))))))
 
 		
 
