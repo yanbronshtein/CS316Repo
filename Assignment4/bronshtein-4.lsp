@@ -25,6 +25,6 @@
 		nil
 		(let ((x (neg-nums (cdr l))))
 			; car l is negative
-			(cond ((minusp (car l)))
+			(cond ((minusp (car l))
 							(cons (car l) x))
-						(t x))))
+						(t x)))))
