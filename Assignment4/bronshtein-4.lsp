@@ -157,7 +157,7 @@
 		(cond ((< (car l) p) (list (cons (car l) (car x)) (cadr x)))
 		; If the first element of l is greater than or equal to the partition value, 
 		; put to the right of partition value.(cdr list) 
-					(t (list ((car x) (cons (car l) (cadr x))))))))
+					(t (list (car x) (cons (car l) (cadr x)))))))
 
 		; (print "x")
 		; (print x)
