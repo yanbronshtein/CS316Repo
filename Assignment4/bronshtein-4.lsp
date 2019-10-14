@@ -150,28 +150,25 @@
 ;  There are two cases: (car L) may or may not be less than P.
 
 
-; (defun my-partition (l p)
-; 	(let ((x (partition (cdr l) p))))
+;;If the first element if l is less than the partition value, but it to the left of the partition 
 
-; 	)
+(defun my-partition (l p)
+	(let ((x (partition (cdr l) p)))
+		(print "cdr l")
+		(print (cdr l)
+		
+		(print "car l")
+		(print (car l))
+
+		(print "car x")
+		(print (car x))
+		
+		(print "cadr x")
+		(print (cadr x))
 
 
-; (defun my-partition (l p)
-; 	(cond ((> (car l) n) (cons n l))) ; Prepend new element if it is less than first elem in list 
-; 	(let ((x (insert n (cdr l))))
-;     (cond ((<= (car l) n) (cons (car l) x))))) ;Append
+		)))
 
-
-; (defun my-partition (l p)
-;   (let ((x (partition (cdr l) p)))
-;     (print cdr l)
-;     (print car l)
-;     (print car x)
-;     (print cadr x)
-
-;     (cond ((< (car l) p) 
-;     			(list (cons (car l) (car x)) (cadr x)))
-;        		(t (list (car x) (cons (car l) (cadr x)))))))
 
 
 (defun my-partition (l p)
