@@ -79,8 +79,8 @@
 (defun pos (e l)
 	(cond ((endp l) 0)
 				((equal e (car l)) 1)
-				((t (let ((x (pos e (cdr l))))
-						(+ x 1))))))
+				(t (let ((x (pos e (cdr l))))
+						(+ x 1)))))
 
 
 				
