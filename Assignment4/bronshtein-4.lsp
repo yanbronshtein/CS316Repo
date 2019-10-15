@@ -67,6 +67,13 @@
 				(t (let ((x (pos e (cdr l))))
 						(+ x 1)))))
 
+; Solution to Problem 9
+ ; Define a recursive function SPLIT-NUMS such that if N is a non-negative integer then
+ ; (SPLIT-NUMS N) returns a list of two lists: The first of the two lists consists of the even
+ ; integers between 0 and N in descending order, and the other list consists of the odd integers
+ ; between 0 and N in descending order. Examples: (SPLIT-NUMS 0) => ((0) NIL)
+ ; (SPLIT-NUMS 7) => ((6 4 2 0) (7 5 3 1)) (SPLIT-NUMS 8) => ((8 6 4 2 0) (7 5 3 1))
+(defun split-nums )
 
 				
 
