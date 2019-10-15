@@ -128,9 +128,9 @@
 	(cond ((zerop n) (list '(0) nil))
 				(t (let ((x (split-nums (- n 1))))
 						(cond ((evenp n)
-										(list (cons n (car x) (cadr x)))
+										(list (cons n (car x)) (cadr x)))
 									(t
-										(list (car x) (cons n (cadr x))))))))))
+										(list (car x) (cons n (cadr x)))))))))
 
 
 
