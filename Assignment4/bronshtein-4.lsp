@@ -74,7 +74,7 @@
  ; between 0 and N in descending order. Examples: (SPLIT-NUMS 0) => ((0) NIL)
  ; (SPLIT-NUMS 7) => ((6 4 2 0) (7 5 3 1)) (SPLIT-NUMS 8) => ((8 6 4 2 0) (7 5 3 1))
 (defun split-nums (n)
-	(cond ((equal n 0) (list '0 nil)))
+	(cond ((equal n 0) (list '(0) nil)))
 
 	)
 
