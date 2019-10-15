@@ -60,6 +60,28 @@
 				; if (car l)>=p, prepend it to the cdr list
 							(t (list (car x) (cons (car l) (cadr x))))))))
 
+; Solution to Problem 8
+; Without using MEMBER, complete the following definition of a recursive function POS such
+; that if L is a list and E is an element of L then (POS E L) returns the position of the first
+; occurrence of E in L, but if L is a list and E is not an element of L then (POS E L) returns 0. 
+; (DEFUN POS (E L)
+; (COND ((ENDP L)          ... )
+;       ((EQUAL E (CAR L))
+; ... )
+; (T (LET ((X (POS E (CDR L))))
+; ... ))))
+; Examples: 
+; (POS 5 '(1 2 5 3 5 5 1 5)) => 3 
+; (POS 'A '(3 2 1)) => 0 
+; (POS '(3 B) '(3 B)) => 0 
+; (POS'(AB) '((K) (3RC) A (AB) (KLL) (AB))) =>4 
+; (POS'(3B)'((3B)))=>1
+(defun pos (e l)
+	(cond ((endp l) 0)
+				((equal e (car l)) 1)
+				((t (let ((x (pos e (cdr l))))
+						(+ x 1))))))
+
 
 				
 
