@@ -70,67 +70,13 @@
 						(+ x 1)))))
 
 ; Solution to Problem 9
- ; Define a recursive function SPLIT-NUMS such that if N is a non-negative integer then
- ; (SPLIT-NUMS N) returns a list of two lists: The first of the two lists consists of the even
- ; integers between 0 and N in descending order, and the other list consists of the odd integers
- ; between 0 and N in descending order. Examples: (SPLIT-NUMS 0) => ((0) NIL)
- ; (SPLIT-NUMS 7) => ((6 4 2 0) (7 5 3 1)) (SPLIT-NUMS 8) => ((8 6 4 2 0) (7 5 3 1))
-; (defun split-nums (N)
-;    (if (zerop N)
-;        (list (list N) nil)
-;        (let ((x (split-nums (- N 1))))
-; 	  (if (evenp N)
-; 	      (list (cons N (car x)) (cadr x))
-; 	      (list (car x) (cons N (cadr x)))))))
-
-
-; (defun split-nums (n)
-;   (if (zerop n)
-;       (list (list n) nil)
-;       (let ((x (split-nums (- n 1))))
-; 	  		(if (evenp n)
-; 	      		(list (cons n (car x)) (cadr x))
-; 	      		(list (car x) (cons n (cadr x)))))))
-
-
-
-; (defun split-nums (n)
-; 	(cond ((zerop n)
-; 					(list '(0) nil))
-; 				(t (let ((x (split-nums (- n 1))))
-; 					(print "n")
-; 					(print n)
-					
-; 					(print "car x")
-; 					(print (car x))
-
-; 					(print "cadr x")
-; 					(print (cadr x))
-
-
-; 						(cond ((evenp n)
-; 										(list (cons n (car x)) (cadr x)))
-; 									(t 
-; 										(list (car x) (cons n (cadr x)))))))))
-
-
-
-
-
-
-
-
-
-
-
-
 (defun split-nums (n)
 	(cond ((zerop n) (list '(0) nil))
 				(t (let ((x (split-nums (- n 1))))
 						(cond ((evenp n)
-										(list (cons n (car x)) (cadr x)))
+										(list (cons n (car x)) (cadr x))) ;If n even, prepend to even list (car x)
 									(t
-										(list (car x) (cons n (cadr x)))))))))
+										(list (car x) (cons n (cadr x))))))))) ;If n odd, prepend to odd list (cadr x)
 
 
 
@@ -141,24 +87,6 @@
 
 
 
-; (defun split-nums (n)
-; 	(cond ((zerop n)
-; 					(list '(0) nil))
-; 				(t (let ((x (split-nums (- n 1))))
-; 					(print "n")
-; 					(print n)
-					
-; 					(print "car x")
-; 					(print (car x))
-
-; 					(print "cadr x")
-; 					(print (cadr x))
-
-
-; 						(cond ((evenp n)
-; 										(list (cons n (car x)) (cadr x)))
-; 									(t 
-; 										(list (car x) (cons n (cadr x)))))))))
 
 
 
