@@ -126,7 +126,7 @@
 
 (defun split-nums (n)
 	(cond ((zerop n) (list '(0) nil))
-				(t (let ((x (split-nums (-n 1))))
+				(t (let ((x (split-nums (- n 1))))
 						(cond ((evenp n)
 										(list (cons n (car x) (cadr x)))
 									(t
