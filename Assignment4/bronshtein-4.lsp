@@ -73,17 +73,29 @@
  ; integers between 0 and N in descending order, and the other list consists of the odd integers
  ; between 0 and N in descending order. Examples: (SPLIT-NUMS 0) => ((0) NIL)
  ; (SPLIT-NUMS 7) => ((6 4 2 0) (7 5 3 1)) (SPLIT-NUMS 8) => ((8 6 4 2 0) (7 5 3 1))
+; (defun split-nums (N)
+;    (if (zerop N)
+;        (list (list N) nil)
+;        (let ((x (split-nums (- N 1))))
+; 	  (if (evenp N)
+; 	      (list (cons N (car x)) (cadr x))
+; 	      (list (car x) (cons N (cadr x)))))))
+
+
 (defun split-nums (n)
-	(cond ((equal n 0) (list '(0) nil)))
+   (if (zerop n)
+       (list (list n) nil)
+       (let ((x (split-nums (- n 1))))
+	  (if (evenp n)
+	      (list (cons n (car x)) (cadr x))
+	      (list (car x) (cons n (cadr x)))))))
 
+
+
+(defun split-nums (n)
+	(cond ((zerop n)
+					(list '(0) nil)))
 	)
-
-				
-
-
-
-
-	; 
 
 
 
