@@ -84,20 +84,20 @@
 ; 	      (list (car x) (cons N (cadr x)))))))
 
 
-(defun split-nums (n)
-  (if (zerop n)
-      (list (list n) nil)
-      (let ((x (split-nums (- n 1))))
-	  		(if (evenp n)
-	      		(list (cons n (car x)) (cadr x))
-	      		(list (car x) (cons n (cadr x)))))))
+; (defun split-nums (n)
+;   (if (zerop n)
+;       (list (list n) nil)
+;       (let ((x (split-nums (- n 1))))
+; 	  		(if (evenp n)
+; 	      		(list (cons n (car x)) (cadr x))
+; 	      		(list (car x) (cons n (cadr x)))))))
 
 
 
 (defun split-nums (n)
 	(cond ((zerop n)
 					(list '(0) nil))
-				(t (let ((x split-nums (- n 1)))
+				(t (let ((x (split-nums (- n 1))))
 						(cond ((evenp n)
 										(list (cons n (car x)) (cadr x)))
 									(t 
