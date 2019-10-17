@@ -121,12 +121,12 @@
 ; consider the case in which (car e) is a member of (cdr e), and the case in which (car e) is 
 ; not a member of (cdr e).]
 (defun singletons (e)
-   (if (endp e)
-       nil
-       (let ((X (singletons (rest e))))
-            (if (member (first e) (rest e))
-                (set-remove (first e) X)
-                (cons (first e) X)))))
+   ; (if (endp e)
+   ;     nil
+   ;     (let ((X (singletons (rest e))))
+   ;          (if (member (first e) (rest e))
+   ;              (set-remove (first e) X)
+   ;              (cons (first e) X)))))
 
 (defun singletons (e)
 	(cond ((null e) nil)
