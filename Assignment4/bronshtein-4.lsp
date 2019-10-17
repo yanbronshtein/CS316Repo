@@ -80,12 +80,13 @@
 
 ; Solution to Problem 10
 (defun set-union (s1 s2)
+	(print "cdr s1:")
+	(print (cdr s1))
+	(print "car s1:")
+	(print (car s1))
+	(print " ")
 	(cond ((null s1) s2)
-				(print "cdr s1:")
-				(print (cdr s1))
-				(print "car s1:")
-				(print (car s1))
-				(print " ")
+				
 				(t (let ((x (set-union (cdr s1) s2)))
 						(print "x is:")
 						(print x)
