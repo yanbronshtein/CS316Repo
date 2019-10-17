@@ -103,8 +103,10 @@
 ; in s then (SET-REMOVE x s) returns a set that is equal to s.
 ; Solution to Problem 11
 (defun set-remove (x s)
-
-	)
+	(cond ((null s) null)
+				(t (let ((y (set-remove y (cdr s))))
+						(cond ((equal (car s) x) y)
+									(t (cons (car s) y)))))))
 
 
 
