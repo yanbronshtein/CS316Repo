@@ -117,7 +117,7 @@
 				((null s2) s1)
 				(t (let ((x (set-union s1 (cdr s2))))
 						(cond ((member (car s2) x) x)
-								(t (cons x (car s2))))))))
+								(t (cons (car s2) x)))))))
 
 
 
