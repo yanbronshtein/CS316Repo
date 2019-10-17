@@ -84,7 +84,7 @@
 	(print "-start outside-")
 	(print "i is:")
 	(print i)
-	(incf num)
+	(incf i)
 	; (print "cdr s1:")
 	; (print (cdr s1))
 	; (print "car s1:")
