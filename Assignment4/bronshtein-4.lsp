@@ -120,7 +120,7 @@
 ; (SINGLETONS '(B G A B C B)) => (G A C) [Hint: When e is nonempty, 
 ; consider the case in which (car e) is a member of (cdr e), and the case in which (car e) is 
 ; not a member of (cdr e).]
-(defun singletons (e)
+; (defun singletons (e)
    ; (if (endp e)
    ;     nil
    ;     (let ((X (singletons (rest e))))
