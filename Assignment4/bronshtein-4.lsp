@@ -97,10 +97,14 @@
 				
 				(t (let ((x (set-union (cdr s1) s2)))
 						(print "-start x-")
-						(print "i inside let is:")
+						(print "i:")
 						(print i)
 						(print "x is:")
 						(print x)
+						(print "s1")
+						(print s1)
+						(print "s2")
+						(print s2)
 						(print "-end x-")
 
 
