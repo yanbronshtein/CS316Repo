@@ -85,10 +85,7 @@
 	(print "i is:")
 	(print i)
 	(incf i)
-	; (print "cdr s1:")
-	; (print (cdr s1))
-	; (print "car s1:")
-	; (print (car s1))
+
 	(print "s1")
 	(print s1)
 	(print "s2")
@@ -111,7 +108,8 @@
 
 
 						(cond ((member (car s1) x) x)
-									(t (cons (car s1) x)))))))
+									(t (cons (car s1) x))))))
+						(print "is this legal?"))
 
 ; Solution to Problem 11
 ; (defun set-remove (x s)
