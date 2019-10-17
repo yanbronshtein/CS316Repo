@@ -79,12 +79,15 @@
 										(list (car x) (cons n (cadr x))))))))) ;If n odd, prepend to odd list (cadr x)
 
 ; Solution to Problem 10
+(setf i 0)
 (defun set-union (s1 s2)
+	(print "i is:")
+	(print i)
 	(print "cdr s1:")
 	(print (cdr s1))
 	(print "car s1:")
 	(print (car s1))
-	(print " ")
+	(print "-----")
 	(cond ((null s1) s2)
 				
 				(t (let ((x (set-union (cdr s1) s2)))
