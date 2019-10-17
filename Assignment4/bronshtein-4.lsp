@@ -81,20 +81,24 @@
 ; Solution to Problem 10
 (setf i 1)
 (defun set-union (s1 s2)
+	(print "-start outside-")
 	(print "i is:")
 	(print i)
 	(print "cdr s1:")
 	(print (cdr s1))
 	(print "car s1:")
 	(print (car s1))
-	(print "-----")
+	(print "-end outside-")
 	(cond ((null s1) s2)
 				
 				(t (let ((x (set-union (cdr s1) s2)))
+						(print "-start x-")
 						(print "i inside let is:")
 						(print i)
 						(print "x is:")
 						(print x)
+						(print "-end x-")
+
 
 
 						(cond ((member (car s1) x) x)
