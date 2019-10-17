@@ -82,15 +82,16 @@
 (defun set-union (s1 s2)
 	(cond ((null s2) s1)
 				(t (let ((x (set-union s1 (cdr s2))))
+						(print x)
 						(cond ((member (car s2) x) x)
 									(t (cons (car s2) x)))))))
 
 ; Solution to Problem 11
-(defun set-remove (x s)
-	(cond ((null s) nil)
-				(t (let ((y (set-remove x (cdr s))))
-						(cond ((equal (car s) x) y)
-									(t (cons (car s) y)))))))
+; (defun set-remove (x s)
+; 	(cond ((null s) nil)
+; 				(t (let ((y (set-remove x (cdr s))))
+; 						(cond ((equal (car s) x) y)
+; 									(t (cons (car s) y)))))))
 
 
 ; Solution to Problem 12
@@ -101,22 +102,27 @@
 ; should return a list consisting of the atoms B, D, E, F, and G (in any order) in which no atom occurs 
 ; more than once.
 
-(defun set-excl-union (s1 s2)
-   (if (endp s1)
-       s2
-       (let ((x (set-excl-union (cdr s1) s2)))
-          (if (member (car s1) x)
-              (set-remove (car s1) x)
-              (cons (car s1) x)))))
+; (defun set-exl-union (s1 s2)
+; 	(cond ((null s1) s2)
+; 				(t (let ((x (set-union (cdr s1) s2)))
+; 						(cond ((member (car s1) x) 
+; 										(set-remove (car s1) x))
+; 									(t (cons () )) 
+; 							)
+		
 
 
-(defun singletons (e)
-   (if (endp e)
-       nil
-       (let ((X (singletons (rest e))))
-            (if (member (first e) (rest e))
-                (set-remove (first e) X)
-                (cons (first e) X)))))
+
+; Solution to Problem 13
+
+; Define a recursive function SINGLETONS such that if e is any list of numbers and/or symbols then 
+; (SINGLETONS e) is a set that consists of all the atoms that occur just once in e.
+; Examples: (SINGLETONS ( )) => NIL (SINGLETONS '(G A B C B)) => (G A C) 
+; (SINGLETONS '(H G A B C B)) => (H G A C) (SINGLETONS '(A G A B C B)) => (G C) 
+; (SINGLETONS '(B G A B C B)) => (G A C) [Hint: When e is nonempty, 
+; consider the case in which (car e) is a member of (cdr e), and the case in which (car e) is 
+; not a member of (cdr e).]
+
 
 
 
