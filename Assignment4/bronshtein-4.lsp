@@ -93,6 +93,31 @@
 									(t (cons (car s) y)))))))
 
 
+; Solution to Problem 12
+; Define a recursive function SET-EXCL-UNION such that if s1 and s2 are sets then (SET-EXCL-UNION s1 s2) 
+; is a set that contains all those atoms that are elements of exactly one of s1 and s2, but no other atoms. 
+; (SET-EXCL-UNION s1 s2) does not contain any atoms that are neither in s1 nor in s2, and also does not 
+; contain the atoms that are in both of s1 and s2. For example, (SET-EXCL-UNION '(A B C D) '(E C F G A)) 
+; should return a list consisting of the atoms B, D, E, F, and G (in any order) in which no atom occurs 
+; more than once.
+
+(defun set-excl-union (s1 s2)
+   (if (endp s1)
+       s2
+       (let ((x (set-excl-union (cdr s1) s2)))
+          (if (member (car s1) x)
+              (set-remove (car s1) x)
+              (cons (car s1) x)))))
+
+
+(defun singletons (e)
+   (if (endp e)
+       nil
+       (let ((X (singletons (rest e))))
+            (if (member (first e) (rest e))
+                (set-remove (first e) X)
+                (cons (first e) X)))))
+
 
 
 
