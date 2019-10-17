@@ -79,7 +79,26 @@
 										(list (car x) (cons n (cadr x))))))))) ;If n odd, prepend to odd list (cadr x)
 
 
+; Define a recursive function SET-UNION such that if s1 and s2 are sets then (SET-UNION s1 s2) is a set 
+; that contains the elements of s1 and the elements of s2, but no other elements. 
+; Thus (SET-UNION '(A B C D) '(C E F)) should return a list consisting of the 
+; atoms A, B, C, D, E, and F (in any order) in which no atom occurs more than once.
 
+; Solution to Problem 10
+; (defun set-union (s1 s2) 
+; 	(if (null s1)
+; 			nil
+; 			(let ((x ())))
+; 	)
+
+
+(defun set-union (s1 s2)
+   (if (endp s1)
+       s2
+       (let ((x (set-union (cdr s1) s2)))
+          (if (member (car s1) x)
+              x
+              (cons (car s1) x)))))
 
 
 
