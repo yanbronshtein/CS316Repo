@@ -79,13 +79,33 @@
 										(list (car x) (cons n (cadr x))))))))) ;If n odd, prepend to odd list (cadr x)
 
 ; Solution to Problem 10
+; (defun set-union (s1 s2)
+; 	(cond ((and (null s1) (null s2)) nil)
+; 				((null s1) s2)
+; 				((null s2) s1)
+; 				(t (let ((x (set-union s1 (cdr s2))))
+; 						(cond ((member (car s2) x) x)
+; 								(t (cons (car s2) x)))))))
+
+
 (defun set-union (s1 s2)
-	(cond ((and (null s1) (null s2)) nil)
-				((null s1) s2)
-				((null s2) s1)
+	(cond ((null s2 s1)
 				(t (let ((x (set-union s1 (cdr s2))))
 						(cond ((member (car s2) x) x)
 								(t (cons (car s2) x)))))))
+
+
+
+; Define a recursive function SET-REMOVE such that if s is a set and x is an atom 
+; in s then (SET-REMOVE x s) 
+; is a set that consists of all the elements of s except x, 
+; but if s is a set and x is an atom which is not 
+; in s then (SET-REMOVE x s) returns a set that is equal to s.
+; Solution to Problem 11
+(defun set-remove (x s)
+
+	)
+
 
 
 
