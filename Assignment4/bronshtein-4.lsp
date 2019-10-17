@@ -104,7 +104,7 @@
 ; Solution to Problem 11
 (defun set-remove (x s)
 	(cond ((null s) null)
-				(t (let ((y (set-remove y (cdr s))))
+				(t (let ((y (set-remove x (cdr s))))
 						(cond ((equal (car s) x) y)
 									(t (cons (car s) y)))))))
 
