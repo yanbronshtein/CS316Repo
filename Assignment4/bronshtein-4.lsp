@@ -80,12 +80,12 @@
 
 ; Solution to Problem 10
 (defun set-union (s1 s2)
-	(cond ((null s2) s1)
-				(t (let ((x (set-union s1 (cdr s2))))
+	(cond ((null s1) s2)
+				(t (let ((x (set-union (cdr s1) s2)))
 						(print "x is:")
 						(print x)
-						(cond ((member (car s2) x) x)
-									(t (cons (car s2) x)))))))
+						(cond ((member (car s1) x) x)
+									(t (cons (car s1) x)))))))
 
 ; Solution to Problem 11
 ; (defun set-remove (x s)
