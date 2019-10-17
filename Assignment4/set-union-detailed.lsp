@@ -1,9 +1,9 @@
 
-What is actually happening here?
-The function recursively calls itself until the first set is empty, and then saves that to x
-After each pop off of the recursion stack, the following condition is checked:
-if the first element of s1 which at this point is the last element of the original s1,
-return the result. 
+; What is actually happening here?
+; The function recursively calls itself until the first set is empty, and then saves that to x
+; After each pop off of the recursion stack, the following condition is checked:
+; if the first element of s1 which at this point is the last element of the original s1,
+; return x. Otherwise prepend this last value to x 
 (defun set-union (s1 s2)
 	(print "-start outside-")
 	(print "i is:")

@@ -79,44 +79,18 @@
 										(list (car x) (cons n (cadr x))))))))) ;If n odd, prepend to odd list (cadr x)
 
 ; Solution to Problem 10
-(setf i 1)
 (defun set-union (s1 s2)
-	(print "-start outside-")
-	(print "i is:")
-	(print i)
-	(incf i)
-
-	(print "s1")
-	(print s1)
-	(print "s2")
-	(print s2)
-	(print "-end outside-")
 	(cond ((null s1) s2)
-				
 				(t (let ((x (set-union (cdr s1) s2)))
-						(print "-start x-")
-						(print "i:")
-						(print i)
-						(print "x is:")
-						(print x)
-						(print "s1")
-						(print s1)
-						(print "s2")
-						(print s2)
-						(print "-end x-")
-
-
-
 						(cond ((member (car s1) x) x)
-									(t (cons (car s1) x))))))
-						(print "is this legal?"))
+									(t (cons (car s1) x)))))))
 
 ; Solution to Problem 11
-; (defun set-remove (x s)
-; 	(cond ((null s) nil)
-; 				(t (let ((y (set-remove x (cdr s))))
-; 						(cond ((equal (car s) x) y)
-; 									(t (cons (car s) y)))))))
+(defun set-remove (x s)
+	(cond ((null s) nil)
+				(t (let ((y (set-remove x (cdr s))))
+						(cond ((equal (car s) x) y)
+									(t (cons (car s) y)))))))
 
 
 ; Solution to Problem 12
@@ -127,13 +101,12 @@
 ; should return a list consisting of the atoms B, D, E, F, and G (in any order) in which no atom occurs 
 ; more than once.
 
-; (defun set-exl-union (s1 s2)
-; 	(cond ((null s1) s2)
-; 				(t (let ((x (set-union (cdr s1) s2)))
-; 						(cond ((member (car s1) x) 
-; 										(set-remove (car s1) x))
-; 									(t (cons () )) 
-; 							)
+(defun set-exl-union (s1 s2)
+	(cond ((null s1) s2)
+				(t (let ((x (set-union (cdr s1) s2)))
+						(cond ((member (car s1) x) 
+										(set-remove (car s1) x))
+									(t (cons (car s1) x)))))))
 		
 
 
