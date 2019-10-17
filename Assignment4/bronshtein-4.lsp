@@ -88,6 +88,7 @@
 						(print (cdr s1))
 						(print "car s1:")
 						(print (car s1))
+						(print " ")
 
 						(cond ((member (car s1) x) x)
 									(t (cons (car s1) x)))))))
