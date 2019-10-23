@@ -101,14 +101,21 @@
 ; should return a list consisting of the atoms B, D, E, F, and G (in any order) in which no atom occurs 
 ; more than once.
 
-(defun set-exl-union (s1 s2)
-	(cond ((null s1) s2)
-				(t (let ((x (set-union (cdr s1) s2)))
-						(cond ((member (car s1) x) 
-										(set-remove (car s1) x))
-									(t (cons (car s1) x)))))))
+; (defun set-exl-union (s1 s2)
+; 	(cond ((null s1) s2)
+; 				(t (let ((x (set-union (cdr s1) s2)))
+; 						(cond ((member (car s1) x) 
+; 										(set-remove (car s1) x))
+; 									(t (cons (car s1) x)))))))
 		
 
+(defun set-excl-union (s1 s2)
+  (cond ((endp s1) s2)
+        ((endp s2) s1)
+        (T         (let ((x (set-excl-union (cdr s1) s2)))
+                        (if (member (car s1) x)
+                            (set-remove (car s1) x)
+                            (cons (car s1) x))))))
 
 
 ; Solution to Problem 13
