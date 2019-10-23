@@ -11,4 +11,4 @@
         ((> (list-length l) n) 'ERROR)
         (t (let ((x (index (- n 1) (cdr l))))
             (cond ((= n 1) (car l))
-                  (t x)))))
+                  (t x))))))
