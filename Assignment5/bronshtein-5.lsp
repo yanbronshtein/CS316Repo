@@ -17,5 +17,5 @@
 (defun min-first (l)
   (let ((x (min-first (cdr l))))
     (cond ((null l) nil)
-          ((<= (car l) (car x) l)
+          ((<= (car l) (car x) l))
           ((t (cons (cons (car x) (car l) (cdr x))))))))
