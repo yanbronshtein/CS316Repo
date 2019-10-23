@@ -8,7 +8,7 @@
 (defun index (n l)
   (cond ((null l) 'ERROR)
         ((< n 1) 'ERROR)
-        ((> (list-length l) n) 'ERROR))
+        ((> (list-length l) n) 'ERROR)
         (t (let ((x (index (- n 1) (cdr l))))
             (cond ((= n 1) (car l))
                   (t x)))))
