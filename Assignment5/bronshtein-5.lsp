@@ -8,7 +8,7 @@
 (defun index (n l)
   (cond ((null l) 'ERR)
         ((< n 1) 'ERR)
-        ((> (list-length l) n) 'ERR)
+        ;; ((> (list-length l) n) 'ERR)
         (t (let ((x (index (- n 1) (cdr l))))
             (cond ((= n 1) (car l))
                   (t x))))))
@@ -32,12 +32,19 @@
 
 
 
+(defun my-ssort (l)
+  (let* ((L1 (min-first l))
+         (x (ssort (cdr l1))
+         (cons (car l1) x)))))
+
+
   
-;; (defun min-first (L)
-  ;;  (if (listp L)
-  ;;      (if (equal (cadr L) NIL) 
-  ;;          L
-  ;;          (let ((X (min-first (cdr L))))
-  ;;          (if (> (car L) (car X))
-  ;;              (cons (car X) (cons (car L) (cdr X)))
-  ;;              L)))))
+
+;; (defun ssort (L)
+;;    (if (endp L)
+;;        nil
+;;        (if (equal (cadr L) nil)
+;;            L   
+;;            (let* ((L1 (min-first L))
+;;                   (X (ssort (cdr L1))))
+;;                   (cons (car L1) X)))))
