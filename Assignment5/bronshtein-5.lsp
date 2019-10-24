@@ -14,18 +14,24 @@
                   (t x))))))
 ; Problem 2
 
+
+
+
 ;; (defun my-min-first (l)
 ;;   (let ((x (min-first (cdr l))))
-;;     (cond ((null l) nil)
-;;           ((<= (car l) (car x) l))
-;;           ((t (cons (cons (car x) (car l) (cdr x)))))))))
+;;     (cond ((> (car l) (car x))
+;;             (cons (car x) (cons (car l) (cdr x))))
+;;             (t l))))
 
-
-(defun my-min-first (l)
-  (let ((x (min-first (cdr l))))
-    (cond ((> (car l) (car x))
+(defun min-first (l)
+  (cond ((equal (cadr l) nil) l)
+        (t (let ((x (min-first (cdr l))))
+          (cond ((> (car l) (car x))
             (cons (car x) (cons (car l) (cdr x))))
-            (t l))))
+            (t l))))))
+
+
+
   
 ;; (defun min-first (L)
   ;;  (if (listp L)
