@@ -65,7 +65,7 @@
       (let* ((pl (partition (cdr l) (car l)))
             (left-part (qsort (car pl)))
             (right-part (qsort (cadr pl))))
-            (append left-part (cons (car l) right)))))
+            (append left-part (cons (car l) right-part)))))
 
 
 
