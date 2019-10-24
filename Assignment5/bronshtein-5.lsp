@@ -59,7 +59,7 @@
 				(list (cons (car l) (cadr x)) (car x)))))
 
 
-(defun qsort (l)
+(defun msort (l)
   (cond ((null l) nil)
         ((null (cdr l) l))
         (t (let* ((sl (split-list (cdr l) (car l)))
