@@ -39,7 +39,7 @@
 
 
 
-(defun my-ssort (l)
+(defun ssort (l)
   (cond ((null l) nil)
         ((equal (cadr l) nil) l)
         (t (let* ((l1 (min-first l))
