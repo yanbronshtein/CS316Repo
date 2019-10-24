@@ -28,10 +28,10 @@
             (t l))))
   
 ;; (defun min-first (L)
-   (if (listp L)
-       (if (equal (cadr L) NIL) 
-           L
-           (let ((X (min-first (cdr L))))
-           (if (> (car L) (car X))
-               (cons (car X) (cons (car L) (cdr X)))
-               L)))))
+  ;;  (if (listp L)
+  ;;      (if (equal (cadr L) NIL) 
+  ;;          L
+  ;;          (let ((X (min-first (cdr L))))
+  ;;          (if (> (car L) (car X))
+  ;;              (cons (car X) (cons (car L) (cdr X)))
+  ;;              L)))))
