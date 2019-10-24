@@ -32,12 +32,19 @@
 
 
 
+;; (defun my-ssort (l)
+;;   (let* ((l1 (min-first l))
+;;          (x (ssort (cdr l1))))
+;;          (cons (car l1) x)))
+
+
+
 (defun my-ssort (l)
-  (let* ((l1 (min-first l))
-         (x (ssort (cdr l1))))
-         (cons (car l1) x)))
-
-
+  (cond ((null l) nil)
+        ((equal (cadr l) nil) l)
+        (t (let* ((l1 (min-first l))
+             (x (ssort (cdr l1))))
+             (cons (car l1) x)))))
   
 
 ;; (defun ssort (L)
