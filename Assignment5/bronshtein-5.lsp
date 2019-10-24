@@ -61,7 +61,7 @@
 
 (defun msort (l)
   (cond ((null l) nil)
-        ((null (cdr l) l))
+        ((null (cdr l)) l)
         (t (let* ((sl (split-list (cdr l) (car l)))
              (left-part (msort (car sl)))
              (right-part (msort (cadr sl))))
