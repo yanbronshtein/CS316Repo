@@ -2,7 +2,6 @@
 (defun index (n l)
   (cond ((null l) 'ERR)
         ((< n 1) 'ERR)
-        ;; ((> (list-length l) n) 'ERR)
         (t (let ((x (index (- n 1) (cdr l))))
             (cond ((= n 1) (car l))
                   (t x))))))
@@ -50,6 +49,23 @@
 	      ((< (car L1) (car L2)) 
           (cons (car l1) (merge-lists (cdr l1) l2)))
 				(t (cons (car l2) (merge-lists (cdr l2) l1)))))
+
+
+; Solution to Problem 6
+(defun split-list (l)
+	(if (null l)
+			nil
+			(let ((x (split-list (cdr l))))
+				(list (cons (car l) (cadr x)) (car x)))))
+
+
+(defun qsort (l)
+  (cond ((null l) nil)
+        ((null (cdr l) l))
+        (t (let* ((sl (split-list (cdr l) (car l)))
+             (left-part (msort (car sl)))
+             (right-part (msort (cadr sl))))
+             (merge-lists left-part right-part)))))
 				       
 
 
