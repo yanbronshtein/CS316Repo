@@ -34,8 +34,8 @@
 
 (defun my-ssort (l)
   (let* ((l1 (min-first l))
-         (x (ssort (cdr l1))
-         (cons (car l1) x)))))
+         (x (ssort (cdr l1))))
+         (cons (car l1) x)))
 
 
   
