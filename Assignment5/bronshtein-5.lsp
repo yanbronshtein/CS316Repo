@@ -14,7 +14,7 @@
                   (t x))))))
 ; Problem 2
 
-(defun min-first (l)
+(defun my-min-first (l)
   (let ((x (min-first (cdr l))))
     (cond ((null l) nil)
           ((<= (car l) (car x) l))
