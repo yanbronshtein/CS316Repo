@@ -49,7 +49,7 @@
 	      ((endp L2) L1)
 	      ((< (car L1) (car L2)) 
           (cons (car l1) (merge-lists (cdr l1) l2)))
-				(t (cons (car l2) (merge-lists (cdr l2) l2)))))
+				(t (cons (car l2) (merge-lists (cdr l2) l1)))))
 				       
 
 
