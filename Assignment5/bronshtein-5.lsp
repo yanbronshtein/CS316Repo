@@ -47,11 +47,32 @@
              (cons (car l1) x)))))
   
 
-;; (defun ssort (L)
-;;    (if (endp L)
-;;        nil
-;;        (if (equal (cadr L) nil)
-;;            L   
-;;            (let* ((L1 (min-first L))
-;;                   (X (ssort (cdr L1))))
-;;                   (cons (car L1) X)))))
+; Solution to Problem 7
+(defun partition (l p)
+	(if (null l)
+			nil
+			(let ((x (partition (cdr l) p)))
+				; if (car l)<p, prepend it to car list
+				(cond ((< (car l) p)
+								(list (cons (car l) (car x)) (cadr x)))
+				; if (car l)>=p, prepend it to the cdr list
+							(t (list (car x) (cons (car l) (cadr x))))))))
+
+
+(defun qsort (l)
+  (if (endp l)
+      nil
+      (let* ((pl (partition (cdr l) (car l))))
+            (left-part (qsort (car pl)))
+            (right-part (qsort (cadr pl))))
+            (append left-part (cons (car l) right))))
+
+
+
+;; (defun qsort (L)
+;;    (cond ((endp L) nil)
+;;          (t (let ((P1 (partition L (car L))))
+;;                  (cond ((endp (first P1)) (cons (first L)(qsort (rest L))))
+;;                         (t (let ((x (qsort (first P1)))
+;;                                  (y (qsort (second P1))))
+;;                              (append x y))))))))
