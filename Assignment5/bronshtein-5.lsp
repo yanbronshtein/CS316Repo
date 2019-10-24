@@ -11,8 +11,8 @@
   (cond ((equal (cadr l) nil) l)
         (t (let ((x (min-first (cdr l))))
                  (cond ((> (car l) (car x))
-                  (cons (car x) (cons (car l) (cdr x))))
-                 (t l))))))
+                        (cons (car x) (cons (car l) (cdr x))))
+                       (t l))))))
 
 ; Solution to Problem 3
 (defun ssort (l)
@@ -52,13 +52,6 @@
 
 
 ; Solution to Problem 6
-(defun split-list (l)
-	(if (null l)
-			'(nil nil)
-			(let ((x (split-list (cdr l))))
-				    (list (cons (car l) (cadr x)) (car x)))))
-
-
 (defun msort (l)
   (cond ((null l) nil)
         ((null (cdr l)) l)
@@ -66,6 +59,15 @@
                   (left-part (msort (car sl)))
                   (right-part (msort (cadr sl))))
                  (merge-lists left-part right-part)))))
+
+(defun split-list (l)
+	(if (null l)
+			'(nil nil)
+			(let ((x (split-list (cdr l))))
+				    (list (cons (car l) (cadr x)) (car x)))))
+
+
+
 				       
 
 
