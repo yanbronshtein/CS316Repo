@@ -65,7 +65,7 @@
         (t (let* ((sl (split-list (l)))
                   (left-part (msort (car sl)))
                   (right-part (msort (cadr sl))))
-                  (merge-lists left-part right-part)))))
+                 (merge-lists left-part right-part)))))
 				       
 
 
