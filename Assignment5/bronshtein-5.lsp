@@ -54,7 +54,7 @@
 ; Solution to Problem 6
 (defun split-list (l)
 	(if (null l)
-			nil
+			'(nil nil)
 			(let ((x (split-list (cdr l))))
 				    (list (cons (car l) (cadr x)) (car x)))))
 
@@ -64,8 +64,8 @@
         ((null (cdr l)) l)
         (t (let* ((sl (split-list (l)))
                   (left-part (msort (car sl)))
-             (right-part (msort (cadr sl))))
-             (merge-lists left-part right-part)))))
+                  (right-part (msort (cadr sl))))
+                  (merge-lists left-part right-part)))))
 				       
 
 
