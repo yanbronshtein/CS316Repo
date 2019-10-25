@@ -91,13 +91,13 @@
 
 
 
-(defun UNREPEATED-ELTS (L)
-   (cond ((endp L)    NIL)
-         ((or (endp  (cdr L))  (not (equal (car L) (cadr L))))
-                     (cons (car L) (UNREPEATED-ELTS (cdr L))))
-         ((or (endp  (cddr L)) (not (equal (car L) (caddr L))))
-                     (UNREPEATED-ELTS (cddr L)))
-         (T          (UNREPEATED-ELTS (cdr L)))))
+;; (defun UNREPEATED-ELTS (L)
+;;    (cond ((endp L)    NIL)
+;;          ((or (endp  (cdr L))  (not (equal (car L) (cadr L))))
+;;                      (cons (car L) (UNREPEATED-ELTS (cdr L))))
+;;          ((or (endp  (cddr L)) (not (equal (car L) (caddr L))))
+;;                      (UNREPEATED-ELTS (cddr L)))
+;;          (T          (UNREPEATED-ELTS (cdr L)))))
 
 
 
