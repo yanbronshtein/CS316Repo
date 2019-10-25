@@ -67,6 +67,39 @@
 				    (list (cons (car l) (cadr x)) (car x)))))
 
 
+; Solution to Problem 7
+(defun remove-adj-dupl (l)
+  (if (null l)
+       l
+      (let ((X (remove-adj-dupl (cdr l))))
+           (cond ((null x) (cons (car l) x))
+                 ((equal (car l) (car x)) x)
+                 (T (cons (car l) x))))))
+
+
+; Solution to Problem 8
+(defun unrepeated-elts (l)
+  (cond ((null l) 
+          nil)
+        ((or (null (cdr l) (not (equal (car l) (cadr l))))
+             (cons (car l) (unrepeated-elts (cdr l))))
+        ((or (null l) (cddr l)) (not (equal (car l) (caddr l))))
+             (unrepeated-elts (cddr l)))
+              
+        (t (unrepeated-elts (cdr l)))))
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 				       
 
