@@ -87,7 +87,7 @@
          (t          (unrepeated-elts (cdr l)))))
 
 
-;; Solution to Problem 9
+; Solution to Problem 9
 (defun repeated-elts (l)
   (cond ((null l)    nil)
        ((or (null (cdr l))  (not (equal (car l) (cadr l))))
@@ -95,6 +95,18 @@
        ((or (null (cddr l)) (not (equal (car l) (caddr l))))
                     (cons (car l) (repeated-elts (cddr L))))
        (t           (repeated-elts (cdr l)))))
+
+
+; Solution to Problem 10
+(defun count-repetitions (l)
+  (if   (null l)
+         nil
+        (let ((x  (count-repetitions (cdr l))))
+              (if (or  (endp (cdr l)) (not (equal (car l) (cadr l))))
+                       (cons (list 1 (car L)) x)
+                       (cons (list (+ 1 (caar x)) (car l)) (cdr x)))))) 
+
+
 
 
 
