@@ -124,22 +124,22 @@
         (t nil)))
 
 ; Solution to Problem 13
-(defun PARTITION1 (L P PREDICATE)
-  (if  (endp L)
-       (list NIL NIL)
-       (let ((X (PARTITION1 (cdr L) P PREDICATE)))
-                (if (funcall PREDICATE (car L)    P)
-                    (list (cons (car L) (car X)) (cadr X))
-                    (list (car X) (cons (car L)  (cadr X)))))))
+(defun partition1 (l p predicate)
+  (if  (null l)
+       (list nil nil)
+       (let ((x (partition1 (cdr l) p predicate)))
+                (if (funcall predicate (car l) p)
+                    (list (cons (car l) (car x)) (cadr x))
+                    (list (car x) (cons (car l)  (cadr x)))))))
 
 
-(defun QSORT1 (P L)
-  (if (endp L)
-       NIL
-      (let* ((PL     (PARTITION1 (cdr L) (car L) P))
-             (left   (QSORT1 P (car  PL)))
-             (right  (QSORT1 P (cadr PL))))
-             (append left (cons (car L) right)))))
+(defun qsort1 (p l)
+  (if (null l)
+       nil
+      (let* ((pl     (partition1 (cdr l) (car l) p))
+             (left-part   (qsort1 p (car  pl)))
+             (right-part  (qsort1 P (cadr pl))))
+             (append left-part (cons (car l) right-part)))))
 
 ;; ; Solution to Problem 14
 ;; (defun appliedIth (f i l)
