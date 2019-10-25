@@ -123,14 +123,14 @@
         ((funcall f (car l)) (our-every f (cdr L)))
         (t nil)))
 
-;; ; Solution to Problem 13
-;; (defun partition1 (l p predicate)
-;;   (if  (null l)
-;;        (list nil nil)
-;;        (let ((x (partition1 (cdr l) P predicate)))
-;;                 (if (funcall predicate (car l) p)
-;;                     (list (cons (car l) (car x)) (cadr x))
-;;                     (list (car x) (cons (car l) (cadr x)))))))
+; Solution to Problem 13
+(defun partition1 (l p predicate)
+  (if  (null l)
+       (list nil nil)
+       (let ((x (partition1 (cdr l) P predicate)))
+                (if (funcall predicate (car l) p)
+                    (list (cons (car l) (car x)) (cadr x))
+                    (list (car x) (cons (car l) (cadr x)))))))
 
 ;; (defun qsort1 (p l)
 ;;   (if (endp l)
