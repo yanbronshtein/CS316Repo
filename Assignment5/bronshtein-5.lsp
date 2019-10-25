@@ -109,7 +109,7 @@
 ; Solution to Problem 11
 (defun subset (f l)
   (cond ((endp l) nil)
-        ((funcall f (car l))  (cons (car Ll (subset f (cdr l)))))
+        ((funcall f (car l))  (cons (car l (subset f (cdr l)))))
         (t (subset f (cdr l)))))
 
 ;; ; Solution to Problem 12
