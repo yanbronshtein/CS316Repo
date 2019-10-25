@@ -135,10 +135,10 @@
 (defun qsort1 (p l)
   (if (endp l)
        nil
-      (let* ((pl     (partition1 (cdr l) (car l) p))
-             (left   (qsort1 p (car  pl)))
-             (right  (qsort1 p (cadr pl))))
-             (append left (cons (car l) right)))))
+      (let* ((pl     (PARTITION1 (cdr l) (car l) p))
+             (left-part   (qsort1 p (car  pl)))
+             (right-part  (qsort1 P (cadr PL))))
+             (append left-part (cons (car L) right-part)))))
 
 ;; ; Solution to Problem 14
 ;; (defun appliedIth (f i l)
