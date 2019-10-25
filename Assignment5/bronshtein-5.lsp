@@ -104,7 +104,13 @@
         (let ((x  (count-repetitions (cdr l))))
               (if (or  (endp (cdr l)) (not (equal (car l) (cadr l))))
                        (cons (list 1 (car L)) x)
-                       (cons (list (+ 1 (caar x)) (car l)) (cdr x)))))) 
+                       (cons (list (+ 1 (caar x)) (car l)) (cdr x))))))
+
+; Solution to Problem 11
+(defun subset (f L)
+  (cond ((endp l) nil)
+        ((funcall f (car l))  (cons (car L) (subset f (cdr l))))
+        (T (subset f (cdr l)))))
 
 
 
