@@ -112,16 +112,16 @@
         ((funcall f (car l))  (cons (car l) (subset f (cdr l))))
         (t (subset f (cdr l)))))
 
-;; ; Solution to Problem 12
+; Solution to Problem 12
 (defun our-some (f l)
   (cond ((null l) nil)
         ((funcall f (car L))   L)
         (T (our-some f (cdr l)))))
 
-;; (defun our-every (f l)
-;;   (cond ((null l) t)
-;;         ((funcall f (car l)) (our-every f (cdr L)))
-;;         (t nil)))
+(defun our-every (f l)
+  (cond ((null l) t)
+        ((funcall f (car l)) (our-every f (cdr L)))
+        (t nil)))
 
 ;; ; Solution to Problem 13
 ;; (defun partition1 (l p predicate)
