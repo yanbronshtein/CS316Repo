@@ -1,3 +1,4 @@
+;;;; THIS FILE CAN BE VIEWED ON euclid USING: less ‐x2 bronshtein‐4.lsp
 ;Solution to Problem 1
 (defun index (n l)
   (cond ((null l) 'ERR)
@@ -151,7 +152,7 @@
 	     (append z y))))
 
 
-;; ; Solution to Problem 15
+; Solution to Problem 15
 (defun tr-add (l acc)
   (if (null l)
        acc
