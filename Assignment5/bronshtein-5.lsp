@@ -141,20 +141,20 @@
              (right-part  (qsort1 P (cadr pl))))
              (append left-part (cons (car l) right-part)))))
 
-;; ; Solution to Problem 14
-;; (defun appliedIth (f i l)
-;;   (cond   ((null l)     nil)
-;;           ((<= i 0)     nil)
-;;           ((=  i 1)    (cons  (funcall f (car l)) (cdr l)))
-;;           (t           (cons  (car l) (appliedIth f (- i 1) (cdr l))))))
+; Solution to Problem 14
+(defun appliedIth (f i l)
+  (cond   ((null l)     nil)
+          ((<= i 0)     nil)
+          ((=  i 1)    (cons  (funcall f (car l)) (cdr l)))
+          (t           (cons  (car l) (appliedIth f (- i 1) (cdr l))))))
 
-;; (defun foohelper (f i l length)
-;;   (cond ((endp l)       nil)
-;;         ((> i length)   nil)
-;;         (t             (cons (appliedIth f i l) (foohelper f (+ i 1) l length)))))
+(defun foohelper (f i l length)
+  (cond ((endp l)       nil)
+        ((> i length)   nil)
+        (t             (cons (appliedIth f i l) (foohelper f (+ i 1) l length)))))
 
-;; (defun foo (f l)
-;;   (foohelper f 1 l (length l)))
+(defun foo (f l)
+  (foohelper f 1 l (length l)))
 
 ;; ; Solution to Problem 15
 ;; (defun tr-add (l acc)
