@@ -142,27 +142,13 @@
 ;;              (append left-part (cons (car l) right-part)))))
 
 ; Solution to Problem 14
-;; (defun foo (f l)
-;;   (foohelper f 1 l (length l)))
-
-;; (defun appliedIth (f i l)
-;;   (cond   ((null l)     nil)
-;;           ((<= i 0)     nil)
-;;           ((=  i 1)    (cons  (funcall f (car l)) (cdr l)))
-;;           (t           (cons  (car l) (appliedIth f (- i 1) (cdr l))))))
-
-;; (defun foohelper (f i l length)
-;;   (cond ((null l)       nil)
-;;         ((> i length)   nil)
-;;         (t             (cons (appliedIth f i l) (foohelper f (+ i 1) l length)))))
-
-(defun FOO (f L)
-   (if (endp L) 
+(defun foo (f l)
+   (if (null l) 
        () 
-       (let* ((x (foo f (cdr L))) (ls (cdr L))
-	     (Z (list (cons (funcall f (car L)) ls)))
-	     (Y (mapcar (lambda (a) (cons (car L) a)) x)))
-	     (append Z Y))))
+       (let* ((x (foo f (cdr l))) (ls (cdr l))
+	     (z (list (cons (funcall f (car l)) ls)))
+	     (y (mapcar (lambda (a) (cons (car l) a)) x)))
+	     (append z y))))
 
 
 ;; ; Solution to Problem 15
