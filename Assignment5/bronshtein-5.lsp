@@ -156,20 +156,13 @@
 ;;         ((> i length)   nil)
 ;;         (t             (cons (appliedIth f i l) (foohelper f (+ i 1) l length)))))
 
-(defun appliedIth (f i L)
-  (cond   ((endp L)     NIL)
-          ((<= i 0)     NIL)
-          ((=  i 1)    (cons  (funcall f (car L)) (cdr L)))
-          (T           (cons  (car L) (appliedIth f (- i 1) (cdr L))))))
-
-(defun FOOHELPER (f i L LENGTH)
-  (cond ((endp L)       NIL)
-        ((> i LENGTH)   NIL)
-        (T             (cons (appliedIth f i L) (FOOHELPER f (+ i 1) L LENGTH)))))
-
-
 (defun FOO (f L)
-  (FOOHELPER f 1 L (LENGTH L)))
+   (if (endp L) 
+       () 
+       (let* ((x (foo f (cdr L))) (ls (cdr L))
+	     (Z (list (cons (funcall f (car L)) ls)))
+	     (Y (mapcar (lambda (a) (cons (car L) a)) x)))
+	     (append Z Y))))
 
 
 ;; ; Solution to Problem 15
