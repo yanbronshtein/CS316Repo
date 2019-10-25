@@ -124,13 +124,13 @@
         (t nil)))
 
 ; Solution to Problem 13
-(defun partition1 (l p predicate)
-  (if  (null l)
-       (list nil nil)
-       (let ((x (partition1 (cdr l) P predicate)))
-                (if (funcall predicate (car l) p)
-                    (list (cons (car l) (car x)) (cadr x))
-                    (list (car x) (cons (car l) (cadr x)))))))
+(defun PARTITION1 (L P PREDICATE)
+  (if  (endp L)
+       (list NIL NIL)
+       (let ((X (PARTITION1 (cdr L) P PREDICATE)))
+                (if (funcall PREDICATE (car L)    P)
+                    (list (cons (car L) (car X)) (cadr X))
+                    (list (car X) (cons (car L)  (cadr X)))))))
 
 (defun qsort1 (p l)
   (if (endp l)
