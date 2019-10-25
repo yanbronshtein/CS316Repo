@@ -78,26 +78,26 @@
 
 
 ; Solution to Problem 8
-(defun unrepeated-elts (l)
-  (cond ((null l) 
-             nil)
-        ((or (null (cdr l)) (not (equal (car l) (cadr l))))
-             (cons (car l) (unrepeated-elts (cdr l))))
-        ((or (null (cddr l)) (not (equal (car l) (caddr l)))
-             (unrepeated-elts (cddr l))))
-        (t (unrepeated-elts (cdr l)))))
+;; (defun unrepeated-elts (l)
+;;   (cond ((null l) 
+;;              nil)
+;;         ((or (null (cdr l)) (not (equal (car l) (cadr l))))
+;;              (cons (car l) (unrepeated-elts (cdr l))))
+;;         ((or (null (cddr l)) (not (equal (car l) (caddr l)))
+;;              (unrepeated-elts (cddr l))))
+;;         (t (unrepeated-elts (cdr l)))))
 
  
 
 
 
-;; (defun UNREPEATED-ELTS (L)
-;;    (cond ((endp L)    NIL)
-;;          ((or (endp  (cdr L))  (not (equal (car L) (cadr L))))
-;;                      (cons (car L) (UNREPEATED-ELTS (cdr L))))
-;;          ((or (endp  (cddr L)) (not (equal (car L) (caddr L))))
-;;                      (UNREPEATED-ELTS (cddr L)))
-;;          (T          (UNREPEATED-ELTS (cdr L)))))
+(defun UNREPEATED-ELTS (L)
+   (cond ((endp L)    NIL)
+         ((or (endp  (cdr L))  (not (equal (car L) (cadr L))))
+                     (cons (car L) (UNREPEATED-ELTS (cdr L))))
+         ((or (endp  (cddr L)) (not (equal (car L) (caddr L))))
+                     (UNREPEATED-ELTS (cddr L)))
+         (T          (UNREPEATED-ELTS (cdr L)))))
 
 
 
