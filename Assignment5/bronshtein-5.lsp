@@ -113,10 +113,10 @@
         (t (subset f (cdr l)))))
 
 ;; ; Solution to Problem 12
-;; (defun our-some (f l)
-;;   (cond ((null l) nil)
-;;         ((funcall f (car L))   L)
-;;         (T (our-some f (cdr l)))))
+(defun our-some (f l)
+  (cond ((null l) nil)
+        ((funcall f (car L))   L)
+        (T (our-some f (cdr l)))))
 
 ;; (defun our-every (f l)
 ;;   (cond ((null l) t)
