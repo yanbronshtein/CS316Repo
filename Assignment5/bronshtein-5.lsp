@@ -183,8 +183,8 @@
         (T               (mapcar #'cons   (car m) (transpose1 (cdr m))))))
 
 (defun transpose2 (m)
-  (cond ((endp (car  m))    NIL)
-        ((endp (cdar m))   (cons (mapcar #'car m) nil))
+  (cond ((null (car  m))    NIL)
+        ((null (cdar m))   (cons (mapcar #'car m) nil))
         (T                 (cons (mapcar #'car m) (transpose2 (mapcar #'cdr m))))))
 (defun transpose3 (m)
   (apply #'mapcar #'list m))
