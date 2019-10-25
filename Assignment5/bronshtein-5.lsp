@@ -152,38 +152,38 @@
 
 
 ;; ; Solution to Problem 15
-;; (defun tr-add (l acc)
-;;   (if (null l)
-;;        acc
-;;       (tr-add (cdr l) (+ acc (car l)))))
+(defun tr-add (l acc)
+  (if (null l)
+       acc
+      (tr-add (cdr l) (+ acc (car l)))))
 
-;; (defun tr-mul (l acc)
-;;   (if (null l)
-;;        acc
-;;       (tr-mul (cdr l) (* acc (car l)))))
+(defun tr-mul (l acc)
+  (if (null l)
+       acc
+      (tr-mul (cdr l) (* acc (car l)))))
 
-;; (defun tr-fac (num acc)
-;;   (if (= 1 num)
-;;        acc
-;;       (tr-fac (- num 1) (* acc num))))
+(defun tr-fac (num acc)
+  (if (= 1 num)
+       acc
+      (tr-fac (- num 1) (* acc num))))
 
-;; (defun slow-primep (n)
-;;   (if (<= n 1)
-;;        nil
-;;       (= (- n 1) (mod (tr-fac (- n 1) 1) n))))
+(defun slow-primep (n)
+  (if (<= n 1)
+       nil
+      (= (- n 1) (mod (tr-fac (- n 1) 1) n))))
 
-;; ; Solution to Problem 16
-;; (defun transpose1 (m)
-;;   (cond ((null m)         nil)
-;;         ((null (cdr m))  (mapcar #'list   (car m)))
-;;         (T               (mapcar #'cons   (car m) (transpose1 (cdr m))))))
+; Solution to Problem 16
+(defun transpose1 (m)
+  (cond ((null m)         nil)
+        ((null (cdr m))  (mapcar #'list   (car m)))
+        (T               (mapcar #'cons   (car m) (transpose1 (cdr m))))))
 
-;; (defun transpose2 (m)
-;;   (cond ((null (car  m))    NIL)
-;;         ((null (cdar m))   (cons (mapcar #'car m) nil))
-;;         (T                 (cons (mapcar #'car m) (transpose2 (mapcar #'cdr m))))))
-;; (defun transpose3 (m)
-;;   (apply #'mapcar #'list m))
+(defun transpose2 (m)
+  (cond ((null (car  m))    NIL)
+        ((null (cdar m))   (cons (mapcar #'car m) nil))
+        (T                 (cons (mapcar #'car m) (transpose2 (mapcar #'cdr m))))))
+(defun transpose3 (m)
+  (apply #'mapcar #'list m))
 
 
           
