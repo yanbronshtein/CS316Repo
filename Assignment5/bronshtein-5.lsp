@@ -142,6 +142,10 @@
              (append left-part (cons (car l) right-part)))))
 
 ; Solution to Problem 14
+(defun foo (f l)
+  (foohelper f 1 l (length l)))
+
+
 (defun appliedIth (f i l)
   (cond   ((null l)     nil)
           ((<= i 0)     nil)
@@ -153,8 +157,7 @@
         ((> i length)   nil)
         (t             (cons (appliedIth f i l) (foohelper f (+ i 1) l length)))))
 
-(defun foo (f l)
-  (foohelper f 1 l (length l)))
+
 
 ;; ; Solution to Problem 15
 ;; (defun tr-add (l acc)
