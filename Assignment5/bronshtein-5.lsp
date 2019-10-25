@@ -132,13 +132,14 @@
                     (list (cons (car L) (car X)) (cadr X))
                     (list (car X) (cons (car L)  (cadr X)))))))
 
-(defun qsort1 (p l)
-  (if (endp l)
-       nil
-      (let* ((pl     (PARTITION1 (cdr l) (car l) p))
-             (left-part   (qsort1 p (car  pl)))
-             (right-part  (qsort1 P (cadr PL))))
-             (append left-part (cons (car L) right-part)))))
+
+(defun QSORT1 (P L)
+  (if (endp L)
+       NIL
+      (let* ((PL     (PARTITION1 (cdr L) (car L) P))
+             (left   (QSORT1 P (car  PL)))
+             (right  (QSORT1 P (cadr PL))))
+             (append left (cons (car L) right)))))
 
 ;; ; Solution to Problem 14
 ;; (defun appliedIth (f i l)
