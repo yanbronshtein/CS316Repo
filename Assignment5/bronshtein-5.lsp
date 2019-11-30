@@ -1,4 +1,4 @@
-;;;; THIS FILE CAN BE VIEWED ON euclid USING: less ‐x2 bronshtein‐4.lsp
+;; THIS FILE CAN BE VIEWED ON euclid USING: less ‐x2 bronshtein‐4.lsp
 ;Solution to Problem 1
 (defun index (n l)
   (cond ((null l) 'ERR)

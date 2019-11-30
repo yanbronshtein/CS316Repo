@@ -1,0 +1,80 @@
+<program>
+ <importStmt>
+  Reserved Word: import
+  Reserved Word: java
+  .
+  Reserved Word: util
+  .
+  Reserved Word: Scanner
+  ;
+  ... node has no more children
+ Reserved Word: class
+ IDENTIFIER: Simple2
+ {
+ <dataFieldDecl>
+  Reserved Word: static
+  <varDecl>
+   Reserved Word: Scanner
+   IDENTIFIER: input
+   =
+   Reserved Word: new
+   Reserved Word: Scanner
+   (
+   Reserved Word: System
+   .
+   Reserved Word: in
+   )
+   ;
+   ... node has no more children
+  ... node has no more children
+ <mainDecl>
+  Reserved Word: public
+  Reserved Word: static
+  Reserved Word: void
+  Reserved Word: main
+  (
+  Reserved Word: String
+  IDENTIFIER: args
+  [
+  ]
+  )
+  <compoundStmt>
+   {
+   <statement>
+    <varDecl>
+     Reserved Word: int
+     <singleVarDecl>
+      IDENTIFIER: x
+      =
+      <expr3>
+       <expr2>
+        <expr1>
+         IDENTIFIER: input
+         .
+         Reserved Word: nextInt
+         (
+         )
+         ... node has no more children
+        ... node has no more children
+       ... node has no more children
+      ... node has no more children
+     ;
+     ... node has no more children
+    ... node has no more children
+   <statement>
+    <assignmentOrInvoc>
+     IDENTIFIER: x
+     =
+     <expr3>
+      <expr2>
+       <expr1>
+        IDENTIFIER: x
+        ... node has no more children
+       %
+       <expr1>
+        UNSIGNED INTEGER LITERAL: 3
+        ... node has no more children
+       ... node has no more children
+      ... node has no more children
+     ;
+     <argumentList>

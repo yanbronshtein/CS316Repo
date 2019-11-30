@@ -21,8 +21,7 @@
 
 ; Solution to Problem 4
 	(defun multiple-member (a b)
-  	(if (and (or (symbolp a)
-			           (numberp a))
+  	(if (and (or (symbolp a) (numberp a))
 			       (listp b))
 	  	(if (member a (cdr (member a b)))
 	  		T
