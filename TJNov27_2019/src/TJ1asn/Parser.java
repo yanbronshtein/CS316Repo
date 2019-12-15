@@ -1,3 +1,6 @@
+/**
+ * @author Yaniv Bronshtein
+ * @version 1.0*/
 package TJ1asn;
 
 import static TJlexer.LexicalAnalyzer.getCurrentToken;
